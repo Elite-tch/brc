@@ -42,42 +42,42 @@ export default function ValueProposition() {
         viewport={{ once: true }}
       >
         <motion.div variants={fadeIn}>
-        <Card className=" border-slate-700 pt-6 shadow-xl hover:shadow-2xl h-full  transition-colors">
+          <Card className="border-slate-700 pt-6 shadow-xl hover:shadow-2xl h-full transition-colors">
             <CardHeader className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mb-4">
-                <BookOpen size={28} className="text-blue-400" />
+              <div className="w-16 h-16 bg-[#00113D] dark:bg-[#FFF00A]/20 rounded-full flex items-center justify-center mb-4">
+                <BookOpen size={28} className="dark:text-[#FFF00A] text-slate-100" />
               </div>
               <CardTitle className="text-2xl">E-learning Platform</CardTitle>
             </CardHeader>
-            <CardContent className=" text-center text-[#00113D]/70 dark:text-slate-300">
+            <CardContent className="text-center text-[#00113D]/70 dark:text-slate-300">
               <p>From blockchain fundamentals to advanced smart contract development, our comprehensive learning paths guide you through every stage of your blockchain journey. Expert-led courses designed for real-world application.</p>
             </CardContent>
           </Card>
         </motion.div>
 
         <motion.div variants={fadeIn}>
-        <Card className=" border-slate-700 pt-6 shadow-xl hover:shadow-2xl h-full  transition-colors">
+          <Card className="border-slate-700 pt-6 shadow-xl hover:shadow-2xl h-full transition-colors">
             <CardHeader className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mb-4">
-                <Briefcase size={28} className="text-blue-400" />
+              <div className="w-16 h-16 bg-[#00113D] dark:bg-[#FFF00A]/20 rounded-full flex items-center justify-center mb-4">
+                <Briefcase size={28} className="dark:text-[#FFF00A] text-slate-100" />
               </div>
               <CardTitle className="text-2xl">Talent Marketplace</CardTitle>
             </CardHeader>
-            <CardContent className=" text-center text-[#00113D]/70 dark:text-slate-300">
+            <CardContent className="text-center text-[#00113D]/70 dark:text-slate-300">
               <p>Connect with verified blockchain talent or showcase your skills to innovative projects. Our curated marketplace matches the right skills with the right opportunities, accelerating growth for both talent and founders.</p>
             </CardContent>
           </Card>
         </motion.div>
 
         <motion.div variants={fadeIn}>
-          <Card className=" border-slate-700 pt-6 shadow-xl hover:shadow-2xl h-full  transition-colors">
+          <Card className="border-slate-700 pt-6 shadow-xl hover:shadow-2xl h-full transition-colors">
             <CardHeader className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mb-4">
-                <Users size={28} className="text-blue-400" />
+              <div className="w-16 h-16 bg-[#00113D] dark:bg-[#FFF00A]/20 rounded-full flex items-center justify-center mb-4">
+                <Users size={28} className="dark:text-[#FFF00A] text-slate-100" />
               </div>
               <CardTitle className="text-2xl">Community-Driven Approach</CardTitle>
             </CardHeader>
-            <CardContent className=" text-center text-[#00113D]/70 dark:text-slate-300">
+            <CardContent className="text-center text-[#00113D]/70 dark:text-slate-300">
               <p>More than just a platform—we're a community of builders, thinkers, and innovators. Share insights, collaborate on projects, and grow your network with peers who share your passion for blockchain.</p>
             </CardContent>
           </Card>

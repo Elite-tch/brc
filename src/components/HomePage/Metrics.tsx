@@ -19,10 +19,10 @@ export default function CommunityMetrics() {
   };
 
   const metrics = [
-    { icon: <Users size={28} className="text-blue-400" />, number: "15,000+", label: "Active Community Members" },
-    { icon: <BookOpen size={28} className="text-blue-400" />, number: "200+", label: "Specialized Blockchain Courses" },
-    { icon: <Briefcase size={28} className="text-blue-400" />, number: "500+", label: "Successful Talent Placements" },
-    { icon: <Trophy size={28} className="text-blue-400" />, number: "75+", label: "Projects Launched Through Our Platform" }
+    { icon: <Users size={28} className="dark:text-[#FFF00A]" />, number: "15,000+", label: "Active Community Members" },
+    { icon: <BookOpen size={28} className="dark:text-[#FFF00A]" />, number: "200+", label: "Specialized Blockchain Courses" },
+    { icon: <Briefcase size={28} className="dark:text-[#FFF00A]" />, number: "500+", label: "Successful Talent Placements" },
+    { icon: <Trophy size={28} className="dark:text-[#FFF00A]" />, number: "75+", label: "Projects Launched Through Our Platform" }
   ];
 
   return (
@@ -52,10 +52,10 @@ export default function CommunityMetrics() {
             <motion.div 
               key={index} 
               variants={fadeIn}
-              className="dark:bg-[#00113D]/95 shadow-md rounded-lg p-8 text-center border border-slate-600 hover:border-blue-400/50 transition-colors"
+              className="dark:bg-[#00113D]/95 shadow-md rounded-lg p-8 text-center border border-slate-600 dark:hover:border-[#FFF00A]/50 hover:border-[#00113D]/20 transition-colors"
             >
               <div className="mb-4 flex justify-center">{metric.icon}</div>
-              <h3 className="text-3xl md:text-4xl font-bold mb-2 text-blue-400">{metric.number}</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-2 dark:text-[#FFF00A]">{metric.number}</h3>
               <p className="dark:text-slate-300 text-[#00113D]/70">{metric.label}</p>
             </motion.div>
           ))}

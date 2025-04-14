@@ -20,7 +20,7 @@ export default function Hero() {
           animate="visible"
           variants={fadeIn}
         >
-          <Badge className="my-4 py-1 bg-blue-500/20 text-blue-400  hover:bg-blue-500/30">Join 15,000+ members</Badge>
+          <Badge className="my-4 py-1 bg-[#00113D] text-slate-100 dark:bg-[#FFF00A]/20  dark:text-[#FFF00A] dark:hover:bg-[#FFF00A]/30">Join 15,000+ members</Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Connecting Knowledge, Talent, and Opportunities in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF00A] to-[#FFF00A]/70">Blockchain</span>
           </h1>

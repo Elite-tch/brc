@@ -13,7 +13,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className=" shadow-2xl md:px-8 px-4 dark:bg-gradient-to-r dark:from-blue-900/30 dark:to-purple-900/30 py-6 md:py-14 text-[#00113D] bg-slate-50 dark:bg-[#00113D] dark:text-slate-50">
+    <section className="shadow-2xl md:px-8 px-4 dark:bg-gradient-to-r dark:from-[#00113D]/80 dark:to-[#00113D] py-6 md:py-14 text-[#00113D] bg-slate-50 dark:bg-[#00113D] dark:text-slate-50">
       <div className="container mx-auto">
         <motion.div
           className="max-w-2xl mx-auto text-center"
@@ -35,7 +35,7 @@ export default function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Button className="bg-[#00113D] hover:bg-[#00113D]/95 text-slate-100 whitespace-nowrap">
+            <Button className="bg-[#FFF00A] hover:bg-[#FFF00A]/90 text-[#00113D] font-medium whitespace-nowrap">
               Subscribe
             </Button>
           </div>

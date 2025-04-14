@@ -300,9 +300,9 @@ export default function CourseDetailPage({ params }: { params: Promise<{ courseI
 
   const getBadgeColor = (level: string) => {
     const colors: Record<string, string> = {
-      "Beginner": "bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30",
-      "Intermediate": "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30",
-      "Advanced": "bg-purple-500/20 text-purple-400 hover:bg-purple-500/30"
+      "Beginner": "dark:bg-[#FFF00A]/20 dark:text-[#FFF00A] dark:hover:bg-[#FFF00A]/30 text-slate-100 bg-[#00113D]",
+      "Intermediate": "dark:bg-[#FFF00A]/20 dark:text-[#FFF00A] dark:hover:bg-[#FFF00A]/30 text-slate-100 bg-[#00113D]",
+      "Advanced":"dark:bg-[#FFF00A]/20 dark:text-[#FFF00A] dark:hover:bg-[#FFF00A]/30 text-slate-100 bg-[#00113D]"
     };
     return colors[level] || "bg-slate-500/20 text-slate-400 hover:bg-slate-500/30";
   };
@@ -312,13 +312,13 @@ export default function CourseDetailPage({ params }: { params: Promise<{ courseI
     toast.success(`Successfully Enrolled! You've been enrolled in "${course.title}". ${course.price === "Free" ? "Enjoy the course!" : "Thank you for your purchase!"}`);
   };
 
-const handleSaveForLater = () => {
-  setIsSaved(!isSaved);
-  toast(isSaved ? "Removed from Saved Courses" : "Added to Saved Courses", {
-    description: isSaved ? "The course has been removed from your saved list." : "The course has been added to your saved list.",
-    duration: 3000
-  });
-};
+  const handleSaveForLater = () => {
+    setIsSaved(!isSaved);
+    toast(isSaved ? "Removed from Saved Courses" : "Added to Saved Courses", {
+      description: isSaved ? "The course has been removed from your saved list." : "The course has been added to your saved list.",
+      duration: 3000
+    });
+  };
 
   const openLessonVideo = (lessonTitle: string) => {
     setLessonVideoModal({
@@ -337,47 +337,47 @@ const handleSaveForLater = () => {
   };
 
   return (
-    <div className="min-h-screen dark:bg-gradient-to-b dark:from-[#00113D]/95 dark:to-[#000B29] text-[#000B29] dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-gradient-to-b dark:from-[#00113D]/95 dark:to-[#000B29] text-[#00113D] dark:text-slate-100">
       <Navbar />
-      <div className="container mx-auto px-4 pb-8  pt-24">
+      <div className="container mx-auto px-4 pb-8 pt-24">
         <Button 
           onClick={() => router.back()} 
           variant="ghost" 
-          className="mb-6 dark:text-blue-400 dark:hover:text-blue-300 text-[#000B29]/80"
+          className="mb-6 text-[#00113D]/80 dark:text-[#FFF00A] dark:hover:text-[#FFF00A]/80"
         >
           <ChevronLeft className="mr-2" /> Back to Courses
         </Button>
 
         {/* Course Header */}
-        <div className="dark:bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-lg p-6 mb-8 dark:border border-slate-700 shadow-xl">
+        <div className="bg-white dark:bg-gradient-to-r from-[#00113D]/90 to-[#00113D]/95 rounded-lg p-6 mb-8 shadow-xl border border-[#00113D]/10 dark:border-[#FFF00A]/20">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="lg:w-2/3">
               <Badge className={`${getBadgeColor(course.level)} mb-4`}>
                 {course.level}
               </Badge>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">{course.title}</h1>
-              <p className="text-xl text-[#000B29]/70 dark:text-slate-300 mb-6">{course.longDescription || course.description}</p>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#00113D] dark:text-white">{course.title}</h1>
+              <p className="text-xl text-[#00113D]/70 dark:text-slate-300 mb-6">{course.longDescription || course.description}</p>
               
               <div className="flex flex-wrap items-center gap-4 mb-6">
                 <div className="flex items-center gap-1">
-                  <Star className="text-yellow-400 fill-yellow-400" size={18} />
+                  <Star className="text-[#FFF00A] fill-[#FFF00A]" size={18} />
                   <span>{course.rating}</span>
-                  <span className="text-slate-400 ml-1">({course.students || '500+'} students)</span>
+                  <span className="text-[#00113D]/50 dark:text-slate-400 ml-1">({course.students || '500+'} students)</span>
                 </div>
                 {isVideoCourse ? (
                   <div className="flex items-center gap-1">
-                    <Video size={18} />
+                    <Video size={18} className="text-[#00113D] dark:text-[#FFF00A]" />
                     <span>{course.duration}</span>
                   </div>
                 ) : (
                   <div className="flex items-center gap-1">
-                    <FileText size={18} />
+                    <FileText size={18} className="text-[#00113D] dark:text-[#FFF00A]" />
                     <span>{course.readTime}</span>
                   </div>
                 )}
                 {isVideoCourse && (
                   <div className="flex items-center gap-1">
-                    <Check size={18} />
+                    <Check size={18} className="text-[#00113D] dark:text-[#FFF00A]" />
                     <span>{course.modules} modules</span>
                   </div>
                 )}
@@ -385,18 +385,22 @@ const handleSaveForLater = () => {
 
               <div className="flex flex-wrap gap-3">
                 <Button 
-                  className={`px-6 py-3 text-lg ${isEnrolled ? 'bg-green-500 hover:bg-green-600 ' : 'bg-blue-900 border border-blue-700/30 hover:bg-blue-900/90 dark:hover:bg-blue-900/30 text-slate-100'}`}
+                  className={`px-6 py-3 text-lg ${isEnrolled 
+                    ? 'bg-green-500 hover:bg-green-600 text-white' 
+                    : 'bg-[#00113D] hover:bg-[#00113D]/90 text-[#FFF00A] border border-[#FFF00A]/20'}`}
                   onClick={handleEnrollNow}
                   disabled={isEnrolled}
                 >
-                  {isEnrolled ? 'Enrolled' : `Enroll Now - ${course.price || 'Free'}`}
+                  {isEnrolled ? 'Enrolled' : `Enroll Now - Free`}
                 </Button>
                 <Button 
                   variant="outline" 
-                  className={`border-slate-600 dark:hover:bg-slate-800/50 hover:bg-slate-200 px-6 py-3 text-lg ${isSaved ? 'dark:bg-slate-800/50 text-blue-300 bg-slate-100' : ''}`}
+                  className={`border-[#00113D] dark:border-[#FFF00A]/30 hover:bg-[#00113D]/5 dark:hover:bg-[#FFF00A]/10 px-6 py-3 text-lg ${isSaved 
+                    ? 'bg-[#00113D]/5 text-[#00113D] dark:bg-[#FFF00A]/10 dark:text-[#FFF00A]' 
+                    : 'text-[#00113D] dark:text-[#FFF00A]'}`}
                   onClick={handleSaveForLater}
                 >
-                  <Bookmark className={`mr-2 ${isSaved ? 'fill-blue-300' : ''}`} /> 
+                  <Bookmark className={`mr-2 ${isSaved ? 'fill-[#00113D] dark:fill-[#FFF00A]' : ''}`} /> 
                   {isSaved ? 'Saved' : 'Save for Later'}
                 </Button>
               </div>
@@ -404,7 +408,7 @@ const handleSaveForLater = () => {
 
             <div className="lg:w-1/3">
               {isVideoCourse ? (
-                <div className="aspect-video bg-black rounded-lg overflow-hidden">
+                <div className="aspect-video bg-black rounded-lg overflow-hidden border-2 border-[#FFF00A]/30">
                   {isVideoPlaying ? (
                     <iframe 
                       src={`https://www.youtube.com/embed/${course.videoId}?autoplay=1`}
@@ -413,36 +417,26 @@ const handleSaveForLater = () => {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
-           ) : (
-                    <div 
-                      className="w-full h-full  relative cursor-pointer"
-                    
-                    >
-                     <img 
-                            src={`https://img.youtube.com/vi/${course.videoId}/maxresdefault.jpg`}
-                            alt={course.title}
-                            className="w-full h-full object-cover"
-                          />
-                          <div 
-                            className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                            onClick={() => setIsVideoPlaying(true)}
-                          >
-                            <div className="w-16 h-16   rounded-full flex items-center justify-center  transition-transform transform group-hover:scale-110">
-                              <Play size={28} className="text-white ml-1" />
-                            </div>
-                          </div>
+                  ) : (
+                    <div className="w-full h-full relative cursor-pointer">
+                      <img 
+                        src={`https://img.youtube.com/vi/${course.videoId}/maxresdefault.jpg`}
+                        alt={course.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div 
+                        className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                        onClick={() => setIsVideoPlaying(true)}
+                      >
+                        <div className="w-16 h-16 bg-[#00113D]/80 rounded-full flex items-center justify-center transition-transform transform hover:scale-110 border ">
+                          <Play size={28} className="text-slate-100 ml-1" />
+                        </div>
+                      </div>
                     </div>
-
-
-
-
-
-
-
                   )}
                 </div>
               ) : (
-                <div className="h-full rounded-lg overflow-hidden">
+                <div className="h-full rounded-lg overflow-hidden border-2 border-[#FFF00A]/30">
                   <img 
                     src={course.image} 
                     alt={course.title}
@@ -456,31 +450,39 @@ const handleSaveForLater = () => {
 
         {/* Course Tabs */}
         <div className="mb-8">
-          <div className="border-b border-slate-700">
+          <div className="border-b border-[#00113D]/20 dark:border-[#FFF00A]/20">
             <nav className="flex space-x-8">
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'overview' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'overview' 
+                  ? 'border-[#FFF00A] text-[#00113D] dark:text-[#FFF00A]' 
+                  : 'border-transparent text-[#00113D]/60 dark:text-slate-400 hover:text-[#00113D] dark:hover:text-slate-300'}`}
               >
                 Overview
               </button>
               {isVideoCourse && (
                 <button
                   onClick={() => setActiveTab('curriculum')}
-                  className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'curriculum' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                  className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'curriculum' 
+                    ? 'border-[#FFF00A] text-[#00113D] dark:text-[#FFF00A]' 
+                    : 'border-transparent text-[#00113D]/60 dark:text-slate-400 hover:text-[#00113D] dark:hover:text-slate-300'}`}
                 >
                   Curriculum
                 </button>
               )}
               <button
                 onClick={() => setActiveTab('instructor')}
-                className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'instructor' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'instructor' 
+                  ? 'border-[#FFF00A] text-[#00113D] dark:text-[#FFF00A]' 
+                  : 'border-transparent text-[#00113D]/60 dark:text-slate-400 hover:text-[#00113D] dark:hover:text-slate-300'}`}
               >
                 {isVideoCourse ? 'Instructor' : 'Author'}
               </button>
               <button
                 onClick={() => setActiveTab('reviews')}
-                className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'reviews' ? 'border-blue-500 text-blue-400' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'reviews' 
+                  ? 'border-[#FFF00A] text-[#00113D] dark:text-[#FFF00A]' 
+                  : 'border-transparent text-[#00113D]/60 dark:text-slate-400 hover:text-[#00113D] dark:hover:text-slate-300'}`}
               >
                 Reviews
               </button>
@@ -493,28 +495,28 @@ const handleSaveForLater = () => {
           <div className="lg:col-span-2">
             {activeTab === 'overview' && (
               <div>
-                <h2 className="text-2xl font-bold mb-6">About This {isVideoCourse ? 'Course' : 'Article'}</h2>
+                <h2 className="text-2xl font-bold mb-6 text-[#00113D] dark:text-[#FFF00A]">About This {isVideoCourse ? 'Course' : 'Article'}</h2>
                 <div className="prose prose-invert max-w-none">
-                  <p className="dark:text-slate-300 text-[#000B29]/70 mb-6">{course.longDescription}</p>
+                  <p className="text-[#00113D]/70 dark:text-slate-300 mb-6">{course.longDescription}</p>
                   
                   {isVideoCourse && (
                     <>
-                      <h3 className="text-xl font-semibold mb-4">What You'll Learn</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-[#00113D] dark:text-white">What You'll Learn</h3>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
                         {course.whatYouWillLearn?.map((item: string, index: number) => (
                           <li key={index} className="flex items-start gap-2">
-                            <Check className="text-green-400 mt-1 flex-shrink-0" size={18} />
-                            <span>{item}</span>
+                            <Check className="text-[#00113D] dark:text-[#FFF00A] mt-1 flex-shrink-0" size={18} />
+                            <span className="text-[#00113D]/80 dark:text-slate-300">{item}</span>
                           </li>
                         ))}
                       </ul>
 
-                      <h3 className="text-xl font-semibold mb-4">Requirements</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-[#00113D] dark:text-white">Requirements</h3>
                       <ul className="mb-8 space-y-2">
                         {course.requirements?.map((item: string, index: number) => (
                           <li key={index} className="flex items-start gap-2">
-                            <span className="text-slate-400">•</span>
-                            <span>{item}</span>
+                            <span className="text-[#00113D]/60 dark:text-[#FFF00A]/80">•</span>
+                            <span className="text-[#00113D]/80 dark:text-slate-300">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -525,8 +527,8 @@ const handleSaveForLater = () => {
                     <div className="space-y-6">
                       {course.content?.map((section: any, index: number) => (
                         <div key={index} className="mb-6">
-                          <h3 className="text-xl font-semibold mb-3">{section.title}</h3>
-                          <p className="dark:text-slate-300 text-[#000B29]/70">{section.text}</p>
+                          <h3 className="text-xl font-semibold mb-3 text-[#00113D] dark:text-white">{section.title}</h3>
+                          <p className="text-[#00113D]/70 dark:text-slate-300">{section.text}</p>
                         </div>
                       ))}
                     </div>
@@ -537,28 +539,28 @@ const handleSaveForLater = () => {
 
             {activeTab === 'curriculum' && isVideoCourse && (
               <div>
-                <h2 className="text-2xl font-bold mb-6">Course Curriculum</h2>
-                <div className="border border-slate-700 rounded-lg overflow-hidden">
+                <h2 className="text-2xl font-bold mb-6 text-[#00113D] dark:text-[#FFF00A]">Course Curriculum</h2>
+                <div className="border border-[#00113D]/20 dark:border-[#FFF00A]/20 rounded-lg overflow-hidden">
                   {course.curriculum?.map((module: any, index: number) => (
-                    <div key={index} className="border-b border-slate-700 last:border-b-0">
-                      <div className="p-4 dark:bg-slate-900/50">
-                        <h3 className="font-semibold flex items-center justify-between">
+                    <div key={index} className="border-b border-[#00113D]/20 dark:border-[#FFF00A]/20 last:border-b-0">
+                      <div className="p-4 bg-[#00113D]/5 dark:bg-[#00113D]/80">
+                        <h3 className="font-semibold flex items-center justify-between text-[#00113D] dark:text-white">
                           <span>Module {index + 1}: {module.title}</span>
-                          <span className="text-sm text-slate-400">{module.duration}</span>
+                          <span className="text-sm text-[#00113D]/60 dark:text-[#FFF00A]/80">{module.duration}</span>
                         </h3>
                       </div>
-                      <div className="dark:bg-slate-900/20">
+                      <div className="bg-white dark:bg-[#00113D]/30">
                         {module.lessons?.map((lesson: string, lessonIndex: number) => (
                           <div 
                             key={lessonIndex} 
-                            className="p-4 border-t border-slate-800 flex items-center justify-between hover:bg-slate-100 dark:hover:bg-slate-800/30 cursor-pointer"
+                            className="p-4 border-t border-[#00113D]/10 dark:border-[#FFF00A]/10 flex items-center justify-between hover:bg-[#00113D]/5 dark:hover:bg-[#FFF00A]/5 cursor-pointer"
                             onClick={() => openLessonVideo(lesson)}
                           >
                             <div className="flex items-center gap-3">
-                              <Play className="text-blue-400" size={16} />
-                              <span>{lesson}</span>
+                              <Play className="text-[#00113D] dark:text-[#FFF00A]" size={16} />
+                              <span className="text-[#00113D]/80 dark:text-white">{lesson}</span>
                             </div>
-                            <span className="text-sm text-slate-400">5 min</span>
+                            <span className="text-sm text-[#00113D]/60 dark:text-[#FFF00A]/80">5 min</span>
                           </div>
                         ))}
                       </div>
@@ -570,28 +572,28 @@ const handleSaveForLater = () => {
 
             {activeTab === 'instructor' && (
               <div>
-                <h2 className="text-2xl font-bold mb-6">{isVideoCourse ? 'Instructor' : 'Author'}</h2>
+                <h2 className="text-2xl font-bold mb-6 text-[#00113D] dark:text-[#FFF00A]">{isVideoCourse ? 'Instructor' : 'Author'}</h2>
                 <div className="flex items-start md:flex-row flex-col gap-6">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-2xl font-bold">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#00113D] to-[#00113D]/70 flex items-center justify-center text-2xl font-bold text-[#FFF00A]">
                     {isVideoCourse 
                       ? course.instructor?.charAt(0) + course.instructor?.split(' ')[1]?.charAt(0)
                       : course.author?.charAt(0) + course.author?.split(' ')[1]?.charAt(0)}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl font-semibold mb-2 text-[#00113D] dark:text-white">
                       {isVideoCourse ? course.instructor : course.author}
                     </h3>
-                    <p className="dark:text-slate-300 text-[#000B29]/70 mb-4">
+                    <p className="text-[#00113D]/70 dark:text-slate-300 mb-4">
                       {isVideoCourse ? course.instructorBio : course.authorBio}
                     </p>
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1">
-                        <Star className="text-yellow-400 fill-yellow-400" size={16} />
-                        <span>{course.rating} Instructor Rating</span>
+                        <Star className="text-[#FFF00A] fill-[#FFF00A]" size={16} />
+                        <span className="text-[#00113D]/80 dark:text-white">{course.rating} Instructor Rating</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Users size={16} />
-                        <span>{course.students || '500+'} Students</span>
+                        <Users size={16} className="text-[#00113D] dark:text-[#FFF00A]" />
+                        <span className="text-[#00113D]/80 dark:text-white">{course.students || '500+'} Students</span>
                       </div>
                     </div>
                   </div>
@@ -658,26 +660,26 @@ const handleSaveForLater = () => {
                 {isVideoCourse ? (
                   <>
                     <li className="flex items-center gap-3">
-                      <Video size={18} className="text-blue-400" />
+                      <Video size={18} className="text-[#00113D] dark:text-slate-100" />
                       <span>{course.modules} Modules</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <Clock size={18} className="text-blue-400" />
+                      <Clock size={18} className="text-[#00113D] dark:text-slate-100" />
                       <span>{course.duration} of Content</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <FileText size={18} className="text-blue-400" />
+                      <FileText size={18} className="text-[#00113D] dark:text-slate-100" />
                       <span>{course.completion}</span>
                     </li>
                   </>
                 ) : (
                   <>
                     <li className="flex items-center gap-3">
-                      <FileText size={18} className="text-blue-400" />
+                      <FileText size={18} className="text-[#00113D] dark:text-slate-100" />
                       <span>{course.readTime}</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <Clock size={18} className="text-blue-400" />
+                      <Clock size={18} className="text-[#00113D] dark:text-slate-100" />
                       <span>Published {course.publishDate}</span>
                     </li>
                   </>
@@ -690,7 +692,8 @@ const handleSaveForLater = () => {
 
               <div className="space-y-4">
                 <Button 
-                  className={`w-full py-3 text-lg ${isEnrolled ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-900 border text-slate-100 border-blue-700/30 hover:blue-900/90 dark:hover:bg-blue-900/30'}`}
+                  className={`w-full py-3 text-lg ${isEnrolled ?  'bg-green-500 hover:bg-green-600 text-white' 
+                    : 'bg-[#00113D] hover:bg-[#00113D]/90 text-[#FFF00A] border border-[#FFF00A]/20'}`}
                   onClick={handleEnrollNow}
                   disabled={isEnrolled}
                 >
@@ -698,10 +701,12 @@ const handleSaveForLater = () => {
                 </Button>
                 <Button 
                   variant="outline" 
-                  className={`w-full border-slate-600 hover:bg-slate-200 dark:hover:bg-slate-800/50 py-3 text-lg ${isSaved ? 'bg-slate-800/50 text-blue-300' : ''}`}
+                  className={`border-[#00113D] w-full dark:border-[#FFF00A]/30 hover:bg-[#00113D]/5 dark:hover:bg-[#FFF00A]/10 px-6 py-3 text-lg ${isSaved 
+                    ? 'bg-[#00113D]/5 text-[#00113D] dark:bg-[#FFF00A]/10 dark:text-[#FFF00A]' 
+                    : 'text-[#00113D] dark:text-[#FFF00A]'}`}
                   onClick={handleSaveForLater}
                 >
-                 <Bookmark className={`mr-2 ${isSaved ? 'fill-blue-300' : ''}`} /> 
+                 <Bookmark className={`mr-2 ${isSaved ? 'fill-[#00113D] dark:fill-[#FFF00A]' : ''}`} /> 
                   {isSaved ? 'Saved' : 'Save for Later'}
                 </Button>
               </div>
