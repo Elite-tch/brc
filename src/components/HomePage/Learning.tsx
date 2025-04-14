@@ -42,7 +42,7 @@ export default function LearningPlatform() {
         level: "Beginner",
         instructor: "Dr. Sarah Chen",
         videoId: "M9Jkl4d1xBE", // YouTube video ID 
-        price: "$49.99",
+       
         students: "2,543",
         lastUpdated: "April 2025",
         modules: 6,
@@ -58,7 +58,7 @@ export default function LearningPlatform() {
         level: "Intermediate",
         instructor: "Alex Rodriguez",
         videoId: "gyMwXuJrbJQ", // YouTube video ID
-        price: "$69.99",
+       
         students: "1,874",
         lastUpdated: "March 2025",
         modules: 8,
@@ -74,7 +74,7 @@ export default function LearningPlatform() {
         level: "Advanced",
         instructor: "Prof. Maya Johnson",
         videoId: "QJ010l-pBpE", // YouTube video ID
-        price: "$89.99",
+       
         students: "943",
         lastUpdated: "February 2025",
         modules: 7,
@@ -91,9 +91,9 @@ export default function LearningPlatform() {
         rating: "4.8",
         level: "Intermediate",
         author: "James Wilson",
-        image: "https://images.unsplash.com/photo-1526378800651-c32d758db29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
+        image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
         publishDate: "March 15, 2025",
-        price: "$24.99"
+       
       },
       {
         id: "tokenomics",
@@ -105,7 +105,7 @@ export default function LearningPlatform() {
         author: "Elena Petrova",
         image: "https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1802&q=80",
         publishDate: "February 28, 2025",
-        price: "$19.99"
+        
       },
       {
         id: "smart-contract-security",
@@ -117,7 +117,7 @@ export default function LearningPlatform() {
         author: "Daniel Wang",
         image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
         publishDate: "April 3, 2025",
-        price: "$29.99"
+       
       }
     ]
   };
@@ -139,7 +139,7 @@ export default function LearningPlatform() {
   };
 
   return (
-    <section className="py-16 md:py-10 bg-white dark:bg-gradient-to-b dark:from-[#00113D]/95 dark:to-[#000B29] text-slate-100 px-8">
+    <section className="py-0 md:py-10 bg-white dark:bg-gradient-to-b dark:from-[#00113D]/95 dark:to-[#00113D]/95 text-[#00113D] dark:text-slate-100 px-4 md:px-8">
       <div className="container mx-auto">
         <motion.div
           initial="hidden"
@@ -150,9 +150,9 @@ export default function LearningPlatform() {
         >
           <div className="flex mb-8">
             <div className="text-center w-full mx-auto">
-              <Badge className="mb-4 bg-blue-500/20 text-blue-400 hover:bg-blue-500/30">E-learning Platform</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Learn Blockchain From Fundamentals to Advanced</h2>
-              <p className="text-xl text-slate-300 max-w-4xl mx-auto">
+              <Badge className="mb-4 bg-blue-500/20 py-1 text-blue-400 hover:bg-blue-500/30">E-learning Platform</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#00113D] dark:text-slate-100">Learn Blockchain From Fundamentals to Advanced</h2>
+              <p className="text-xl text-[#00113D]/70 dark:text-slate-300 max-w-4xl mx-auto">
                 Our comprehensive learning paths guide you through every stage of your blockchain journey. Expert-led courses designed for real-world application.
               </p>
             </div>
@@ -160,18 +160,18 @@ export default function LearningPlatform() {
         </motion.div>
 
         <Tabs defaultValue="video" className="w-full">
-          <div className="flex justify-between items-center flex-col md:flex-row gap-4">
-            <TabsList className="w-full max-w-md grid grid-cols-2 mb-6 md:mb-12 gap-4">
-              <TabsTrigger value="video" className="flex items-center gap-2 text-lg">
+          <div className="flex justify-between md:items-center flex-col md:flex-row gap-4 mb-6 md:mb-6">
+            <TabsList className=" w-fit flex  items-center  gap-4">
+              <TabsTrigger value="video" className="flex items-center px-3 w-fit gap-2 py-5 shadow-2xl border border-[#00113D] dark:border-blue-900">
                 <Video size={20} />
                 <span>Video Courses</span>
               </TabsTrigger>
-              <TabsTrigger value="article" className="flex items-center gap-2 text-lg">
+              <TabsTrigger value="article" className="flex items-center px-3 w-fit gap-2 py-5 shadow-2xlborder border-[#00113D] dark:border-blue-900">
                 <FileText size={20} />
                 <span>Articles & Tutorials</span>
               </TabsTrigger>
             </TabsList>
-            <Button className="mt-2 md:mt-0 shadow gap-2 self-start md:self-auto bg-blue-600 hover:bg-blue-700">
+            <Button className="mt-2 md:mt-0  gap-2 self-start md:self-auto shadow-2xl border border-[#00113D] dark:border-blue-900">
               View All Courses
               <ChevronRight size={16} />
             </Button>
@@ -187,7 +187,7 @@ export default function LearningPlatform() {
             >
               {courses.video.map((course, index) => (
                 <motion.div key={index} variants={fadeIn}>
-                  <Card className="bg-gradient-to-b from-[#001A5C]/50 to-[#000B29]/90 border-slate-700 h-full hover:border-blue-400/50 transition-all hover:shadow-lg hover:shadow-blue-900/20 overflow-hidden">
+                  <Card className="dar:bg-gradient-to-b dark:from-[#001A5C]/50 dark:to-[#000B29]/90 border-slate-700 h-full hover:border-blue-400/50 transition-all hover:shadow-lg hover:shadow-blue-900/20 overflow-hidden">
                     <div className="h-56 bg-gradient-to-r from-blue-900 to-purple-900 relative group">
                       {videoPlaying === course.videoId ? (
                         <iframe 
@@ -209,7 +209,7 @@ export default function LearningPlatform() {
                             className="absolute inset-0 flex items-center justify-center cursor-pointer"
                             onClick={() => handlePlayVideo(course.videoId)}
                           >
-                            <div className="w-16 h-16 bg-blue-600/90 rounded-full flex items-center justify-center hover:bg-blue-500 transition-transform transform group-hover:scale-110">
+                            <div className="w-16 h-16   rounded-full flex items-center justify-center  transition-transform transform group-hover:scale-110">
                               <Play size={28} className="text-white ml-1" />
                             </div>
                           </div>
@@ -226,48 +226,46 @@ export default function LearningPlatform() {
                     </div>
                     <CardHeader className="pb-2">
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-blue-400">{course.instructor}</span>
+                        <span className="dark:text-blue-400 text-blue-500">{course.instructor}</span>
                         <div className="flex items-center gap-1">
                           <Star size={16} className="text-yellow-400 fill-yellow-400" />
                           <span className="text-yellow-400">{course.rating}</span>
-                          <span className="text-slate-400 text-xs">({course.students} students)</span>
+                          <span className="dark:text-slate-400 text-xs text-[#00113D]/70">({course.students} students)</span>
                         </div>
                       </div>
                       <CardTitle className="text-xl">{course.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-300 mb-4">{course.description}</p>
+                      <p className="dark:text-slate-300 text-[#00113D]/70 mb-4">{course.description}</p>
                       <div className="flex flex-wrap gap-y-2 gap-x-4 text-sm mb-4">
-                        <div className="flex items-center gap-1 text-slate-300">
+                        <div className="flex items-center gap-1 dark:text-slate-300 text-[#00113D]/70">
                           <Clock size={14} />
                           <span>{course.duration}</span>
                         </div>
-                        <div className="flex items-center gap-1 text-slate-300">
+                        <div className="flex items-center gap-1 dark:text-slate-300 text-[#00113D]/70">
                           <Check size={14} />
                           <span>{course.modules} modules</span>
                         </div>
-                        <div className="flex items-center gap-1 text-slate-300">
+                        <div className="flex items-center gap-1 text-[#00113D]/70 dark:text-slate-300">
                           <FileText size={14} />
                           <span>{course.completion}</span>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between">
-                        <div className="text-xl font-bold text-blue-400">{course.price}</div>
-                        <div className="text-xs text-slate-400">Updated {course.lastUpdated}</div>
+                      <div className="flex items-center justify-end">
+                       
+                        <div className="text-xs text-[#00113D]/70 dark:text-slate-400">Updated {course.lastUpdated}</div>
                       </div>
                     </CardContent>
                     <CardFooter>
                       <Button 
                         onClick={() => handleEnroll(course.id)}
-                        className="w-full bg-blue-600 hover:bg-blue-700 gap-2"
+                        className="w-full dark:bg-blue-900/20  border border-blue-700/30 gap-2 dark:hover:bg-blue-900/30 bg-[#00113D] hover:bg-[#00113D]/90 text-white"
                       >
                         Enroll Now
                         <ArrowRight size={16} />
                       </Button>
                     </CardFooter>
-                    <div className="bg-blue-900/20 p-3 border-t border-blue-700/30">
-                      <p className="text-sm italic text-slate-300">"{course.testimonial}"</p>
-                    </div>
+                    
                   </Card>
                 </motion.div>
               ))}
@@ -284,7 +282,7 @@ export default function LearningPlatform() {
             >
               {courses.article.map((article, index) => (
                 <motion.div key={index} variants={fadeIn}>
-                  <Card className="bg-gradient-to-b from-[#001A5C]/50 to-[#000B29]/90 border-slate-700 h-full hover:border-blue-400/50 transition-all hover:shadow-lg hover:shadow-blue-900/20 overflow-hidden">
+                  <Card className="dark:bg-gradient-to-b dark:from-[#001A5C]/50 dark:to-[#000B29]/90 border-slate-700 h-full hover:border-blue-400/50 transition-all hover:shadow-lg hover:shadow-blue-900/20 overflow-hidden">
                     <div className="h-56 overflow-hidden relative group">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10 group-hover:opacity-75 transition-opacity" />
                       <img 
@@ -303,7 +301,7 @@ export default function LearningPlatform() {
                     </div>
                     <CardHeader className="pb-2">
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-blue-400">{article.author}</span>
+                        <span className="dark:text-blue-400 text-blue-500">{article.author}</span>
                         <div className="flex items-center gap-1">
                           <Star size={16} className="text-yellow-400 fill-yellow-400" />
                           <span className="text-yellow-400">{article.rating}</span>
@@ -312,19 +310,19 @@ export default function LearningPlatform() {
                       <CardTitle className="text-xl">{article.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-300 mb-4">{article.description}</p>
+                      <p className="dark:text-slate-300 text-[#00113D]/70 mb-4">{article.description}</p>
                       <div className="flex justify-between items-center text-sm">
-                        <div className="flex items-center gap-1 text-slate-300">
+                        <div className="flex items-center gap-1 text-[#00113D] dark:text-slate-300">
                           <Clock size={14} />
                           <span>{article.readTime}</span>
                         </div>
-                        <span className="text-slate-400">Published {article.publishDate}</span>
+                        <span className="dark:text-slate-400 text-[#00113D]">Published {article.publishDate}</span>
                       </div>
                     </CardContent>
                     <CardFooter>
                       <Button 
                         onClick={() => handleEnroll(article.id)}
-                        className="w-full bg-blue-600 hover:bg-blue-700 gap-2"
+                        className="w-full dark:bg-blue-900/20 bg-[#00113D] text-slate-100  border border-blue-700/30 hover:bg-[#00113D]/90 gap-2"
                       >
                         Read Article
                         <ArrowRight size={16} />
@@ -345,11 +343,11 @@ export default function LearningPlatform() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <div className="p-8 rounded-lg border border-blue-700/30 bg-gradient-to-r from-blue-900/30 to-purple-900/30">
+          <div className="p-8 rounded-lg border border-blue-700/30 dark:bg-gradient-to-r dark:from-blue-900/30 dark:to-purple-900/30">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-2/3">
                 <h3 className="text-2xl font-bold mb-4">Become a Certified Blockchain Developer</h3>
-                <p className="text-slate-300 mb-6">
+                <p className="dark:text-slate-300 text-[#00113D]/70 mb-6">
                   Complete our comprehensive learning paths and earn industry-recognized certifications that showcase your blockchain expertise to potential employers and clients.
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -368,7 +366,7 @@ export default function LearningPlatform() {
                 </div>
               </div>
               <div className="md:w-1/3">
-                <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-900/20">
+                <Button size="lg" className="w-full dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 dark:hover:from-blue-700 dark:hover:to-purple-700 bg-[#00113D] text-slate-100  shadow-lg shadow-blue-900/20">
                   Explore Certification Paths
                 </Button>
               </div>

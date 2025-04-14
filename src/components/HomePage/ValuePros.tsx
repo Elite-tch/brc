@@ -20,7 +20,7 @@ export default function ValueProposition() {
   };
 
   return (
-    <section className="container text-[#00113D] mx-auto py-16 md:py-10 px-8">
+    <section className="container text-[#00113D] dark:text-slate-100 dark:bg-[#00113D] mx-auto pt-8 border-blue-900 pb-16 md:py-10 px-4 md:px-8 dark:border-t">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -29,7 +29,7 @@ export default function ValueProposition() {
         className="text-center mb-16"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Your Complete Blockchain Ecosystem</h2>
-        <p className="text-xl text-[#00113D]/70 max-w-3xl mx-auto">
+        <p className="text-xl text-[#00113D]/70 dark:text-slate-300 max-w-3xl mx-auto">
           Discover how our platform brings together education, talent, and community to build the future of Web3.
         </p>
       </motion.div>
@@ -49,7 +49,7 @@ export default function ValueProposition() {
               </div>
               <CardTitle className="text-2xl">E-learning Platform</CardTitle>
             </CardHeader>
-            <CardContent className=" text-center text-[#00113D]/70">
+            <CardContent className=" text-center text-[#00113D]/70 dark:text-slate-300">
               <p>From blockchain fundamentals to advanced smart contract development, our comprehensive learning paths guide you through every stage of your blockchain journey. Expert-led courses designed for real-world application.</p>
             </CardContent>
           </Card>
@@ -63,7 +63,7 @@ export default function ValueProposition() {
               </div>
               <CardTitle className="text-2xl">Talent Marketplace</CardTitle>
             </CardHeader>
-            <CardContent className=" text-center text-[#00113D]/70">
+            <CardContent className=" text-center text-[#00113D]/70 dark:text-slate-300">
               <p>Connect with verified blockchain talent or showcase your skills to innovative projects. Our curated marketplace matches the right skills with the right opportunities, accelerating growth for both talent and founders.</p>
             </CardContent>
           </Card>
@@ -77,7 +77,7 @@ export default function ValueProposition() {
               </div>
               <CardTitle className="text-2xl">Community-Driven Approach</CardTitle>
             </CardHeader>
-            <CardContent className=" text-center text-[#00113D]/70">
+            <CardContent className=" text-center text-[#00113D]/70 dark:text-slate-300">
               <p>More than just a platform—we're a community of builders, thinkers, and innovators. Share insights, collaborate on projects, and grow your network with peers who share your passion for blockchain.</p>
             </CardContent>
           </Card>
