@@ -451,7 +451,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ courseI
         {/* Course Tabs */}
         <div className="mb-8">
           <div className="border-b border-[#00113D]/20 dark:border-[#FFF00A]/20">
-            <nav className="flex space-x-8">
+            <nav className="flex space-x-4 md:space-x-8">
               <button
                 onClick={() => setActiveTab('overview')}
                 className={`py-4 px-1 font-medium text-sm border-b-2 ${activeTab === 'overview' 

@@ -170,7 +170,7 @@ export default function LearningPlatform() {
               </TabsTrigger>
             </TabsList>
             <Button className="mt-2 md:mt-0 gap-2 self-start md:self-auto shadow-2xl border border-[#00113D] dark:border-[#FFF00A]/30 dark:bg-[#FFF00A]/10 dark:text-[#FFF00A] dark:hover:bg-[#FFF00A]/20">
-              View All Courses
+              <link href="/learning">View All Courses</link>
               <ChevronRight size={16} />
             </Button>
           </div>
