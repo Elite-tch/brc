@@ -318,7 +318,7 @@ export default function LearningPlatform() {
                     <CardFooter>
                       <Button 
                         onClick={() => handleEnroll(article.id)}
-                        className="w-full dark:bg-[#FFF00A]/10 bg-[#00113D] text-slate-100 border border-[#FFF00A]/30 hover:bg-[#00113D]/90 gap-2 dark:text-[#FFF00A] dark:hover:bg-[#FFF00A]/20"
+                        className="w-full  bg-[#00113D] text-slate-100 border dark:bg-[#FFF00A]/10 dark:text-[#FFF00A] border-[#FFF00A]/30 hover:bg-[#00113D]/90 gap-2  dark:hover:bg-[#FFF00A]/20"
                       >
                         Read Article
                         <ArrowRight size={16} />
