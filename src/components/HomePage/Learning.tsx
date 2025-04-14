@@ -7,7 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Video, FileText, Clock, Star, ChevronRight, Play, Check, ArrowRight, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 export default function LearningPlatform() {
   const router = useRouter();
   const [videoPlaying, setVideoPlaying] = useState(null);
@@ -170,7 +170,7 @@ export default function LearningPlatform() {
               </TabsTrigger>
             </TabsList>
             <Button className="mt-2 md:mt-0 gap-2 self-start md:self-auto shadow-2xl border border-[#00113D] dark:border-[#FFF00A]/30 dark:bg-[#FFF00A]/10 dark:text-[#FFF00A] dark:hover:bg-[#FFF00A]/20">
-              <link href="/learning">View All Courses</link>
+              <Link href="/learning">View All Courses</Link>
               <ChevronRight size={16} />
             </Button>
           </div>
