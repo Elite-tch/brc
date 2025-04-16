@@ -84,7 +84,7 @@ const DashboardPage: React.FC = () => {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between ">
                 <CardTitle className="text-sm font-medium pt-3">Total Users</CardTitle>
-                <Users className="h-4 w-4 text-[#FFF00A]" />
+                <Users className="h-4 w-4 dark:text-[#FFF00A]" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">1,348</div>
@@ -97,7 +97,7 @@ const DashboardPage: React.FC = () => {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between ">
                 <CardTitle className="text-sm font-medium pt-3">Active Courses</CardTitle>
-                <BookOpen className="h-4 w-4 text-[#FFF00A]" />
+                <BookOpen className="h-4 w-4 dark:text-[#FFF00A]" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">249</div>
@@ -110,7 +110,7 @@ const DashboardPage: React.FC = () => {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between ">
                 <CardTitle className="text-sm font-medium pt-3">Avg. Completion Time</CardTitle>
-                <Clock className="h-4 w-4 text-[#FFF00A]" />
+                <Clock className="h-4 w-4 dark:text-[#FFF00A]" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">12.3h</div>
@@ -123,7 +123,7 @@ const DashboardPage: React.FC = () => {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between ">
                 <CardTitle className="text-sm font-medium pt-3">Certifications</CardTitle>
-                <Award className="h-4 w-4 text-[#FFF00A]" />
+                <Award className="h-4 w-4 dark:text-[#FFF00A]" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">587</div>
