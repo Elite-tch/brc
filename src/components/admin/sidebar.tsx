@@ -36,31 +36,29 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   return (
     <>
       {/* Mobile Sidebar Toggle */}
-      <div className="lg:hidden p-4 bg-[#00113D] text-white flex justify-between items-center">
-        <h1 className="text-xl font-bold">Blockchain Revolution</h1>
-        <Button variant="ghost" onClick={toggleSidebar} className="text-white hover:bg-blue-900">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+      <div className="lg:hidden mt-20 p-4 bg-[#00113D] text-white flex justify-end items-center">
+        <h1 className="text-2xl hidden font-bold">Blockchain Revolution</h1>
+        <Button variant="ghost" onClick={toggleSidebar} className="text-white ">
+          {isOpen ? <X size={32} /> : <p className='text-2xl text-right'>Menu</p>}
         </Button>
       </div>
 
       {/* Sidebar */}
       <motion.div 
         className={cn(
-          "fixed lg:static border-r border-blue-900 top-0 left-0 h-screen z-40 w-64 bg-[#00113D] text-white",
+          "fixed lg:static border-r pt-24 md:pt-32 border-blue-900 top-0 left-0 h-screen z-40 w-64 bg-[#00113D] text-white",
           "transition-transform duration-300 ease-in-out",
           isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >
         {/* Sidebar Header */}
         <div className="p-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold hidden md:block">Admin Dashboard</h1>
-          <Button variant="ghost" onClick={toggleSidebar} className="lg:hidden text-white hover:bg-blue-900">
-            <X size={24} />
-          </Button>
+          <h1 className="text-xl font-bold ">Admin Dashboard</h1>
+          
         </div>
 
         {/* Sidebar Links */}
-        <nav className="p-4 flex flex-col h-[calc(100%-80px)]">
+        <nav className="p-4 flex flex-col h-[calc(100%-80px)] ">
           <ul className="space-y-2 flex-grow">
             <motion.li whileHover={{ scale: 1.02 }}>
               <Link href="/admin" passHref>

@@ -66,7 +66,7 @@ const DashboardPage: React.FC = () => {
   return (
     <DashboardLayout isOpen={isOpen} toggleSidebar={toggleSidebar}>
       <motion.div 
-        className="p-4 lg:p-8"
+        className="px-4 lg:px-8 md:pt-32 pt-4 pb-8"
         variants={container}
         initial="hidden"
         animate="show"

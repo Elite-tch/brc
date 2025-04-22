@@ -1,6 +1,6 @@
 // src/components/DashboardLayout.tsx
 'use client';
-
+import Navbar from '../HomePage/Navbar';
 import React, { ReactNode } from 'react';
 import Sidebar from '@/components/admin/sidebar';
 
@@ -18,12 +18,15 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 }) => {
   return (
    
-      <div className="flex md:flex-row flex-col  h-screen bg-slate-100 dark:bg-[#00113D]">
+      <div>
+<Navbar/>
+        <div className="flex md:flex-row flex-col  h-screen bg-slate-100 dark:bg-[#00113D] ">
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar}  />
         
-        <div className="flex-1   overflow-auto">
+        <div className="flex-1 overflow-auto">
           <main>{children}</main>
         </div>
+      </div>
       </div>
    
   );
